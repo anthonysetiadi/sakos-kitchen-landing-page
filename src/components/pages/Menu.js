@@ -4,7 +4,12 @@ import Modal from "../Modal/Modal";
 import MenuItem from "../MenuItem";
 import "./Menu.css";
 
-function Menu(props) {
+function Menu() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+
   return (
     <div className="menu">
       <p>Menu</p>
@@ -13,9 +18,7 @@ function Menu(props) {
         {MenuList.map((menuItem, key) => {
           return (
             <MenuItem
-              onClick={() => {
-                props.setModalOpen(true);
-              }}
+              modalOpen={setModalOpen}
               key={key}
               image={menuItem.image}
               name={menuItem.name}
@@ -24,6 +27,7 @@ function Menu(props) {
           );
         })}
       </div>
+      {modalOpen && <Modal openModal={open} closeModal={close} />}
     </div>
   );
 }

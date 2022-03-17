@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import Modal from "./Modal/Modal";
+import React from "react";
 
-function MenuItem({ props, image, name, price }) {
+function MenuItem({ modalOpen, image, name, price }) {
   return (
     <>
-      <div className="menuItem">
+      <div onClick={modalOpen} className="menuItem">
         <div style={{ backgroundImage: `url(${image})` }}> </div>
         <h1> {name} </h1>
         <p> From ${price} AUD </p>

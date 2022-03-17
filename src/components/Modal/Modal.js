@@ -1,17 +1,17 @@
 import React from "react";
 import "./Modal.css";
 
-function Modal({ handleClose, text }) {
+function Modal({ closeModal, price, image, name }) {
   return (
     <div className="modal-background">
-      <div onClick={(e) => e.stopPropagation()} className="modal-container">
+      <div className="modal-container">
         <div className="title-closeBtn">
-          <button onClick={handleClose}>&times;</button>
+          <button onClick={closeModal}>&times;</button>
         </div>
         <div className="title">
-          <h1>Hello</h1>
+          <h1>{name}</h1>
         </div>
-        <div className="body"></div>
+        <div className="body">{price}</div>
         <div className="footer">
           <button className="btn btn-back">Back</button>
           <button className="btn btn-next">Next</button>
