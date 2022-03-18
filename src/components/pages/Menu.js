@@ -6,9 +6,13 @@ import "./Menu.css";
 
 function Menu() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
 
+  const handleOpen = (arrayId) => {
+    setActiveModal(MenuList[arrayId]);
+    setModalOpen(true);
+  };
   const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
 
   return (
     <div className="menu">
@@ -18,7 +22,7 @@ function Menu() {
         {MenuList.map((menuItem, key) => {
           return (
             <MenuItem
-              modalOpen={setModalOpen}
+              openModal={() => handleOpen(key)}
               key={key}
               image={menuItem.image}
               name={menuItem.name}
@@ -27,7 +31,7 @@ function Menu() {
           );
         })}
       </div>
-      {modalOpen && <Modal openModal={open} closeModal={close} />}
+      {modalOpen && <Modal content={activeModal} closeModal={close} />}
     </div>
   );
 }
