@@ -1,7 +1,7 @@
 import React from "react";
 import "./Modal.css";
 
-function Modal({ content, closeModal }) {
+function Modal({ activeId, lastId, content, closeModal, nextBtn, prevBtn }) {
   const { name, image, price, description } = content;
 
   return (
@@ -23,8 +23,16 @@ function Modal({ content, closeModal }) {
           <p>From ${price} AUD</p>
         </div>
         <div className="footer">
-          <button className="btn btn-back">Back</button>
-          <button className="btn btn-next">Next</button>
+          {activeId == 0 || (
+            <button onClick={prevBtn} className="btn btn-back">
+              Back
+            </button>
+          )}
+          {activeId == lastId || (
+            <button onClick={nextBtn} className="btn btn-next">
+              Next
+            </button>
+          )}
         </div>
       </div>
     </div>

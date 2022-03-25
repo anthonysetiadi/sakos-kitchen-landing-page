@@ -8,12 +8,21 @@ function Menu() {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeModal, setActiveModal] = useState(null);
 
-  const handleOpen = (arrayId) => {
-    setActiveModal(MenuList[arrayId]);
+  const handleOpen = (id) => {
+    setActiveModal(MenuList.at(id));
     setModalOpen(true);
   };
   const close = () => setModalOpen(false);
 
+  const handleNext = () => {
+    let nextId = activeModal.id + 1;
+    handleOpen(nextId);
+  };
+
+  const handlePrev = () => {
+    let prevId = activeModal.id - 1;
+    handleOpen(prevId);
+  };
   return (
     <div className="menu">
       <p>Menu</p>
@@ -31,7 +40,16 @@ function Menu() {
           );
         })}
       </div>
-      {modalOpen && <Modal content={activeModal} closeModal={close} />}
+      {modalOpen && (
+        <Modal
+          activeId={activeModal.id}
+          lastId={MenuList.length - 1}
+          content={activeModal}
+          closeModal={close}
+          nextBtn={handleNext}
+          prevBtn={handlePrev}
+        />
+      )}
     </div>
   );
 }
