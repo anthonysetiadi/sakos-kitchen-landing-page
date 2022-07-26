@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sakos-kitchen-landing-page/static/css/main.2f1eb641.css",
-    "main.js": "/sakos-kitchen-landing-page/static/js/main.c2366b6c.js",
+    "main.js": "/sakos-kitchen-landing-page/static/js/main.c2494bc9.js",
     "static/media/hero-image.jpg": "/sakos-kitchen-landing-page/static/media/hero-image.61ef5506da2e2217d711.jpg",
     "static/media/matcha.jpg": "/sakos-kitchen-landing-page/static/media/matcha.f170e93f02c1380ad692.jpg",
     "static/media/sakos-popcorn-6.jpg": "/sakos-kitchen-landing-page/static/media/sakos-popcorn-6.7cb2aa2fd5d21f104b03.jpg",
@@ -21,10 +21,10 @@
     "static/media/sakos-popcorn-5.jpg": "/sakos-kitchen-landing-page/static/media/sakos-popcorn-5.83a40edcfeba68aff52d.jpg",
     "index.html": "/sakos-kitchen-landing-page/index.html",
     "main.2f1eb641.css.map": "/sakos-kitchen-landing-page/static/css/main.2f1eb641.css.map",
-    "main.c2366b6c.js.map": "/sakos-kitchen-landing-page/static/js/main.c2366b6c.js.map"
+    "main.c2494bc9.js.map": "/sakos-kitchen-landing-page/static/js/main.c2494bc9.js.map"
   },
   "entrypoints": [
     "static/css/main.2f1eb641.css",
-    "static/js/main.c2366b6c.js"
+    "static/js/main.c2494bc9.js"
   ]
 }
